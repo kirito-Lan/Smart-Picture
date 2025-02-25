@@ -10,10 +10,12 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ConfigurationProperties(prefix = "cos.client")
 @Data
+@PropertySource("classpath:application-local.yaml")
 public class CosClientConfig {
 
     private String secretId;

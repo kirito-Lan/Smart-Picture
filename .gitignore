@@ -34,7 +34,7 @@ docs/_book
 
 # TODO: where does this rule come from?
 test/
+target/
 
 # local env files
-/src/main/resources/application-cloud.yaml
-/src/main/resources/application-dev.yaml
+/src/main/resources/application-local.yaml

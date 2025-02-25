@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://AliyCloud:3306/smart_picture?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 131645
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  # Redis 配置
+  redis:
+    database: 0
+    host: AliyCloud
+    port: 6379
+    timeout: 5000
+    password: 131645
+  # 设置session存储类型为redis 并且为7天过期
+  session:
+    store-type: redis
+    timeout: 604800
+
+#http://localhost:8080/api/doc.html
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: "智能图片处理系统接口文档"
+    email: polaris.lan@qq.com
+    version: v1.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.jmu.kirito.smartpicture.controller
+
+# cos 配置
+cos:
+  client:
+    secretId: secretId
+    secretKey: secretKey
+    region: ap-region
+    bucket: bucket
+    host: https://
